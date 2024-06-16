@@ -1,3 +1,4 @@
+///package Main;
 import java.io.*;
 import java.util.*;
 import java.util.ArrayList;
@@ -89,7 +90,7 @@ public class Main {
         visualizeGraphShort(graph, "最短路径展示", edges);
         ////////////////////////////////////
 ////////////////////////////////////
-        //随机游走
+      //  随机游走
         System.out.println("\n/////////////////////randomWalk//////////////////////");
         System.out.println("Press 't' to stop the random walk...");
         // 调用randomWalkAndWriteToFile方法
@@ -98,15 +99,15 @@ public class Main {
         System.out.println("Traversal Path: " + traversalPath);
     }
 
+  static class DirectedGraph {
+    Map<String, Map<String, Integer>> adjacencyList = new HashMap<>();
+    private StringBuilder originalText = new StringBuilder(); // 存储原始文本
 
-    static class DirectedGraph {
-        private Map<String, Map<String, Integer>> adjacencyList = new HashMap<>();
-        private StringBuilder originalText = new StringBuilder(); // 存储原始文本
+    Set<String> shortestPathEdges = new HashSet<>(); //用于重建最短路径
 
-        Set<String> shortestPathEdges = new HashSet<>();//用于重建最短路径
-        public List<String> queryBridgeWords(String word1, String word2) {
-            word1 = word1.toLowerCase();
-            word2 = word2.toLowerCase();
+    public List<String> queryBridgeWords(String word1, String word2) {
+      word1 = word1.toLowerCase();
+      word2 = word2.toLowerCase();
 
             // 检查word1和word2是否在图中
             if (!adjacencyList.containsKey(word1) || !adjacencyList.containsKey(word2)) {
@@ -116,16 +117,14 @@ public class Main {
 
             Set<String> bridgeWordsSet = new HashSet<>(); // 使用HashSet来避免重复的桥接词
             for (String adjacentWord : adjacencyList.get(word1).keySet()) {
-                if (adjacencyList.containsKey(adjacentWord) && adjacencyList.get(adjacentWord).containsKey(word2)) {
+              //  if (adjacencyList.containsKey(adjacentWord) && adjacencyList.get(adjacentWord).containsKey(word2)) {
+                if (adjacencyList.get(adjacentWord).containsKey(word2)) {
                     bridgeWordsSet.add(adjacentWord);
                 }
             }
 
             // 转换为List并返回
             List<String> bridgeWords = new ArrayList<>(bridgeWordsSet);
-            if (bridgeWords.isEmpty()) {
-                //System.out.println("No bridge words from word1 to word2!");
-            }
             return bridgeWords;
         }
         public void generateGraph(String filePath) throws IOException {

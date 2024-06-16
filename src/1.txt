@@ -1,10 +1,1 @@
-To @ explore strange new worlds,
-<<<<<<< HEAD
-To seek out new life and new civilizations?explore me seek me B2
-=======
-<<<<<<< HEAD
-To seek out new life and new civilizations?explore me seek metestB
-=======
-To seek out new life and new civilizations?explore me seek me xiugai
->>>>>>> C4
->>>>>>> B1
+a b c

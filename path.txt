@@ -1,9 +1,1 @@
-<<<<<<< HEAD
-civilizations explore strange B2
-=======
-<<<<<<< HEAD
-civilizations explore strange 1
-=======
-civilizations explore strange xiugai
->>>>>>> C4
->>>>>>> B1
+word test a repeated word test a b c d e f g 
